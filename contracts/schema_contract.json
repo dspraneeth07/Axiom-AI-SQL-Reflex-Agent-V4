@@ -1,38 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Database Schema Contract",
-  "description": "Contract definition for database schema validation",
-  "type": "object",
-  "properties": {
-    "tables": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "columns": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "nullable": {
-                  "type": "boolean"
-                }
-              }
-            }
+  "database": {
+    "name": "string",
+    "tables": [
+      {
+        "table_name": "string",
+        "columns": [
+          {
+            "name": "string",
+            "type": "string",
+            "is_primary_key": "boolean",
+            "is_foreign_key": "boolean",
+            "references": "string|null"
           }
-        },
-        "required": ["name", "columns"]
+        ]
       }
-    }
-  },
-  "required": ["tables"]
+    ]
+  }
 }
